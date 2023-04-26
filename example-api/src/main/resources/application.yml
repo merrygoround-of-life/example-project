@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: local
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
+
+example:
+  api:
+    uri-echo: "/v1/echo"
+    uri-catfact: "/v1/catfact"
+
+  catfact:
+    reuse-ratio: 0.5
+    base-url: https://catfact.ninja
+    service-uri: '/fact'
+    max-length: 2000
+
+  db:
+    base-url: http://example-db:8080
+    uri-setcatfact: "/v1/catfact"
+    uri-getcatfact: "/v1/catfact"
+
+---
+spring:
+  profiles: dev
+
+example:
+  catfact:
+    reuse-ratio: 0.9
+    max-length: 50

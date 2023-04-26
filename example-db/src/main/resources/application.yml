@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: local
+
+  r2dbc:
+    url: r2dbc:mysql://example-mysql:3306/my_database?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: hello
+
+logging:
+  level:
+    org.springframework.r2dbc: DEBUG
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
+
+example:
+  db:
+    uri-setcatfact: "/v1/catfact"
+    uri-getcatfact: "/v1/catfact"
+
+---
+spring:
+  profiles: dev
