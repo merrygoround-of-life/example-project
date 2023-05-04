@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: local
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
+
+example:
+  publish:
+    uri-send: "/v1/send"
+
+  kafka:
+    bootstrap-servers: "example-kafka:9092"
+
+---
+spring:
+  profiles: dev

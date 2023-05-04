@@ -40,15 +40,6 @@
 <!--			<groupId>org.springframework.boot</groupId>-->
 <!--			<artifactId>spring-boot-starter-data-redis-reactive</artifactId>-->
 <!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.kafka</groupId>-->
-<!--			<artifactId>spring-kafka</artifactId>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.kafka</groupId>-->
-<!--			<artifactId>spring-kafka-test</artifactId>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
 	</dependencies>
 	<profiles>
 		<profile>
@@ -75,6 +66,7 @@
 				<module>example-common</module>
 				<module>example-db</module>
 				<module>example-api</module>
+				<module>example-publish</module>
 			</modules>
 		</profile>
 		<profile>
@@ -89,6 +81,13 @@
 			<modules>
 				<module>example-common</module>
 				<module>example-api</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>publish</id>
+			<modules>
+				<module>example-common</module>
+				<module>example-publish</module>
 			</modules>
 		</profile>
 	</profiles>

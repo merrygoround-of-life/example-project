@@ -11,9 +11,15 @@ This project was developed as a service application wrapped around the [Cat Fact
    ```
    ./kubernetes/mysql-init.sh 31001 example
    ```
+1. Deploy kafka in k8s
+   > Usage: ./kubernetes/kafka-init.sh {**NodePort** to expose} ({**namespace**} = default:example)
+   ```
+   ./kubernetes/kafka-init.sh 31002 example
+   ```
 1. Install the helm charts
    > Usage: helm -n {**namespace**} install {chart **name**} {chart **path**}
    ```
+   helm -n example install example-publish ./helm-chart/example-publish/
    helm -n example install example-db ./helm-chart/example-db/
    helm -n example install example-api ./helm-chart/example-api/
    ```
